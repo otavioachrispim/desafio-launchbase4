@@ -1,0 +1,44 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "https://google.com",
+      "name": "Otávio Augusto Chrispim De Paiva",
+      "birth": 737337600000,
+      "graduation": "mestrado",
+      "type_class": "P",
+      "services": "Matématica, Física",
+      "created_at": 1599596051828
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://google.com",
+      "name": "Manuela Stocco Costa Lima",
+      "birth": 766195200000,
+      "graduation": "doutorado",
+      "type_class": "D",
+      "services": "Portugues. Literatura",
+      "created_at": 1599596898188
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://google.com",
+      "name": "Otavio",
+      "birth": 737337600000,
+      "graduation": "doutorado",
+      "type_class": "P",
+      "services": "Fisica, Química",
+      "created_at": 1599598579878
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://google.com",
+      "name": "Manuela Stocco Costa Lima",
+      "birth": -15964128000000,
+      "graduation": "medio",
+      "type_class": "P",
+      "services": "Fisica, Química",
+      "created_at": 1599659122174
+    }
+  ]
+}

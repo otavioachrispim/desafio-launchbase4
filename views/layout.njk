@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    {% block head %}
+        <title>JSP Cursos - Matématica, Física e Engenharia</title>
+    {% endblock %}
+
+
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="links">
+            <a href="/" class="active">Teachers</a>
+            <a href="/students">Students</a>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+
+</html>
