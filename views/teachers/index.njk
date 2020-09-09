@@ -2,47 +2,30 @@
 
 {% block content %}
 
-    <div class="card">
-        <section class="avatar" style="background: url(https://camo.githubusercontent.com/73dead28873dd26d3535981c8823ce7b11bffb6d/68747470733a2f2f6d656469612d657870312e6c6963646e2e636f6d2f646d732f696d6167652f43344430334151453534574f644966756146772f70726f66696c652d646973706c617970686f746f2d736872696e6b5f3230305f3230302f303f653d3136303333323438303026763d6265746126743d4444564b4b393352344a613938614f377773445a77512d4e4f31595131517051516e494f4b46634a4a456f) no-repeat center center / cover"></section>
-        <section class="details">
+    <div class="card table-container">
+        <table  widht="100%">
+            <thead>
+                <tr>
+                    <th>Professor</th>
+                    <th>Matérias</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{teacher.avatar_url}})"></span>
+                            {{teacher.name}}</td>
+                        <td>{{teacher.services}}</td>
+                        <td>
+                            <a href="/teachers/{{teacher.id}}" class="link">ver</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
 
-            <h3>Professor</h3>
+        </div>
 
-            <div class="item">
-                <div>Nome completo</div>
-                <div>Otávio Augusto Chrispim</div>
-            </div>
-
-            <div class="item">
-                <div>Idade</div>
-                <div>27</div>
-            </div>
-
-            <div class="item">
-                <div>Grau de escolaridade</div>
-                <div>Ensino Superior Completo</div>
-            </div>
-
-            <div class="item">
-                <div>Tipo de aula</div>
-                <div>A distância</div>
-            </div>
-
-            <div class="item">
-                <div>Matérias</div>
-                <div>
-                    <span>Matemática</span>
-                    <span>Física</span>
-                    <span>Engenharia</span>
-                </div>
-            </div>
-
-            <div class="item">
-                <div>Desde</div>
-                <div>09/09/2020</div>
-            </div>
-
-        </section>
-    </div>
-
-{% endblock content %}
+    {% endblock content %}
