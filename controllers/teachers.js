@@ -1,10 +1,14 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { age, date, graduation} = require('./utils')
+const data = require('../data.json')
+const { age, date, graduation, grade} = require('../utils')
 
 // create
 exports.index = function(req, res) {
     return res.render("teachers/index", { teachers: data.teachers } )
+}
+
+exports.create = function(req, res) {
+    return res.render('teachers/create')
 }
 
 exports.post = function (req,res){
@@ -37,7 +41,7 @@ exports.post = function (req,res){
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send("Write file error!") 
         
-        return res.redirect("/teachers")
+        return res.redirect((`teachers/${id}`))
     })
 
     // return res.send(req.body)
@@ -52,11 +56,17 @@ exports.show = function(req, res) {
 
     if (!foundTeacher) return res.send("Teachers not found!")
 
+    const date = new Date(foundTeacher.created_at)
+    const year = date.getUTCFullYear()
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0")
+    const day = String(date.getUTCDate()).padStart(2, "0")
+
+
     const teacher = {
         ...foundTeacher,
         age: age(foundTeacher.birth),
         services: foundTeacher.services.split(","),
-        created_at: new Intl.DateTimeFormat("en-GB").format(foundTeacher.created_at)
+        created_at: `${day}/${month}/${year}`
     }
 
     return res.render("teachers/show", { teacher, graduation })
@@ -74,7 +84,7 @@ exports.edit = function(req, res){
 
     const teacher = {
         ...foundTeacher,
-        birth: date(foundTeacher.birth),
+        birth: date(foundTeacher.birth).iso
         
     }    
     

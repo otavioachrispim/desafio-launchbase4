@@ -1,0 +1,91 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome completo</div>
+    <div>
+        <input type="text" name="name" placeholder="Nome completo" value="{{ student.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de nascimento</div>
+    <div>
+        <input type="date" name="birth" value="{{ student.birth }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>E-mail</div>
+    <div>
+        <input type="email" name="email" placeholder="" value="{{ student.email }}" >
+    </div>
+</div>
+
+<div class="item">
+    <div>Ano escolar</div>
+    <div>
+        <select name="school">
+                <option value="1EF" {% if student.school == "1EF"%}selected{% endif %}>
+                1º ano do Ensino Fundamental
+                </option>
+                
+                <option value="2EF" {% if student.school == "2EF"%}selected{% endif %}>
+                2º ano do Ensino Fundamental
+                </option>
+
+                <option value="3EF" {% if student.school == "3EF"%}selected{% endif %}>
+                3º ano do Ensino Fundamental
+                </option>
+
+                <option value="4EF" {% if student.school == "4EF"%}selected{% endif %}>
+                4º ano do Ensino Fundamental
+                </option>
+
+                <option value="5EF" {% if student.school == "5EF"%}selected{% endif %}>
+                5º ano do Ensino Fundamental
+                </option>
+
+                <option value="6EF" {% if student.school == "6EF"%}selected{% endif %}>
+                6º ano do Ensino Fundamental
+                </option>
+
+                <option value="7EF" {% if student.school == "7EF"%}selected{% endif %}>
+                7º ano do Ensino Fundamental
+                </option>
+
+                <option value="8EF" {% if student.school == "8EF"%}selected{% endif %}>
+                8º ano do Ensino Fundamental
+                </option>
+
+                <option value="9EF" {% if student.school == "9EF"%}selected{% endif %}>
+                9º ano do Ensino Fundamental
+                </option>
+
+                <option value="1EM" {% if student.school == "1EM"%}selected{% endif %}>
+                1º ano do Ensino Médio
+                </option>
+
+                <option value="2EM" {% if student.school == "2EM"%}selected{% endif %}>
+                2º ano do Ensino Médio
+                </option>
+
+                <option value="3EM" {% if student.school == "3EM"%}selected{% endif %}>
+                3º ano do Ensino Médio
+                </option>    
+            </select>        
+    </div>
+</div>
+
+<div class="item">
+    <div>Carga horária semanal</div>
+    <div>
+        <input type="number" name="hours" value="{{ student.hours }}">
+    </div>
+</div>
+
+<button type="submit">Salvar</button>

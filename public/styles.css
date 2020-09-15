@@ -2,7 +2,7 @@
 
 
 :root{
-    --primary-color: #4768c4;
+    --primary-color: rgb(206, 201, 201);
     --primary-color-light: #3e9eca;
     --primary-color-dark: rgba(10, 11, 65, 0.7);
 }
@@ -15,11 +15,13 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background: var(--primary-color);    
+    background: url(https://images.unsplash.com/photo-1599842364915-6d3b065f15a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80); 
+    background-repeat: no-repeat;   
+    background-size: 100%;
 }
 
 header{
-    background-color: white;
+    /* background-color: white; */
     width: 100%;
     padding: 32px;
     text-align: center;
@@ -36,17 +38,17 @@ header{
 
 .links a{    
     text-decoration: none;
-    color: #777;
+    color: rgb(206, 201, 201);
     position: relative;
 }
 
 .links a.active {
     font-weight: bold;
-    color: var(--primary-color-light);
+    color: white;
 }
 
 .links a:hover{    
-    color: var(--primary-color-light);
+    color: white;
 
 }
 
@@ -54,7 +56,7 @@ header{
     content: "";
     width: 0;
     height: 2px;
-    background-color: var(--primary-color-light);
+    background-color: white;
     left: 0;
     position: absolute;
     bottom: -4px;    
@@ -66,7 +68,7 @@ header{
 }
 
 .card{
-    background-color: white;
+    background-color: rgb(219, 223, 219, 0.2);
     width: 800px;
     min-height: 400px;
     margin: 45px auto;
@@ -102,7 +104,7 @@ header{
 .details h3{
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--primary-color-dark);
+    color: rgb(219, 223, 219, 0.5);
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.5px;
@@ -112,22 +114,22 @@ header{
 .details .item div:nth-child(1){
     font-size: 14px;
     line-height: 24px;
-    color: var(--primary-color-light);
+    color: var(--primary-color);
     letter-spacing: 0.5px;
     font-weight: normal;
 }
 
 .details .item div:nth-child(2){
-    color: var(--primary-color-dark);
+    color: white;
     font-weight: bold;
     font-size: 18px;
 }
 
 .details .item div:nth-child(2) span{
     padding: 8px 16px;
-    background-color: var(--primary-color-light);
+    background-color: var(--primary-color);
     border-radius: 16px;
-    color: var(--primary-color-dark);
+    color: black;
     margin-right: 4px;
     margin-top: 4px;
     display: inline-block;
@@ -139,7 +141,7 @@ header{
 input, select{
     width: 100%;
     outline: none;
-    color: var(--primary-color-dark);
+    color: black;
     font-weight: normal;
     font-size: 16px;
 }
@@ -147,7 +149,7 @@ input, select{
 select{
     font-size: 14px;
     font-weight: normal;
-    color: var(--primary-color-dark);
+    color: black;
 }
 
 input[type="radio"]{
@@ -157,7 +159,7 @@ input[type="radio"]{
 
 input[type="date"]{   
     font-size: 16px;
-    color: var(--primary-color-dark)
+    color: black;
 }
 
 input::placeholder{
@@ -182,11 +184,11 @@ option[type="selected"]{
 button[type="submit"],
 a.button {
     padding: 8px 32px;
-    background-color: var(--primary-color-light);
+    background-color: var(--primary-color);
     border-radius: 4px;
     margin-top: 32px;
     width: 100%;
-    color: white;
+    color: black;
     font-size: 16px;
     font-weight: bold;
 }
@@ -220,13 +222,14 @@ a.button{
 }
 
 td,th {
-    padding: 18px;
+    padding: 18px ;
     border-bottom: 1px solid #d9d9d9;
+    color: white;
 }
 
 th{
     text-transform: uppercase;
-    color: #777;
+    color: rgb(206, 201, 201);;
     font-size: 14px;
 }
 
@@ -250,8 +253,9 @@ tbody tr td:first-child span{
     border: 2px solid white;
 }
 
-tbody tr td:last-child a{
-    background-color: var(--primary-color);
+tbody tr td:last-child a,
+.table-container > a{
+    background-color: rgba(250, 250, 250, 0.3);
     padding: 8px 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -260,7 +264,16 @@ tbody tr td:last-child a{
     border-radius: 4px;
 }
 
+.table-container > a{
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
 }
+
+/* .table-container tbody tr td:nth-child(2) span{
+    background-color: red;
+} */

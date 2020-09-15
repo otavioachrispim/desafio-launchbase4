@@ -23,10 +23,23 @@
     <div>Grau de Escolaridade</div>
     <div>
         <select name="graduation" value="{{teacher.graduation}}">
-            <option value="medio">Ensino Médio Completo</option>
-            <option value="superior">Ensino Superior Completo</option>
-            <option value="mestrado">Mestrado</option>
-            <option value="doutorado">Doutorado</option>
+            <option value="medio"
+            {% if teacher.graduation == "medio"%}selected{%endif%}>
+            Ensino Médio Completo
+            </option>
+            <option value="superior"
+            {% if teacher.graduation == "superior"%}selected{%endif%}>
+            Ensino Superior Completo
+            </option>
+            <option value="mestrado"
+            {% if teacher.graduation == "mestrado"%}selected{%endif%}>
+            Mestrado
+            </option>
+            <option value="doutorado"
+            {% if teacher.graduation == "doutorado"%}selected{%endif%}>
+            Doutorado
+            </option>
+            
         </select>
     </div>
 </div>
@@ -50,4 +63,3 @@
     </div>
 </div>
 
-<button type="submit">Salvar</button>

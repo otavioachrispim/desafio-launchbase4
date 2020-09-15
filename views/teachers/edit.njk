@@ -4,7 +4,7 @@
 
     <div class="card">
 
-        <section class="avatar" style="background: url(https://source.unsplash.com/collection/8899315/900x900) no-repeat center center / cover"></section>
+        <section class="avatar" style="background: url({{teacher.avatar_url}}) no-repeat center center / cover"></section>
 
         <section class="details">
 
@@ -16,11 +16,13 @@
 
                 <input type="hidden" name="id" value={{teacher.id}}>
 
+                <button type="submit">Salvar</button>
+
             </form>
 
             <form id="form-delete" action="/teachers?_method=DELETE" method="post">
 
-                <input type="hidden" name="id" value={{teacher.id}}>
+                <input type="hidden" name="id" value={{teacher.id}}>                
 
                 <button type="submit">Deletar</button>
 
@@ -29,5 +31,7 @@
         </section>
 
     </div>
+
+    {% include 'teachers/confirm.njk'%}
 
 {% endblock content %}
