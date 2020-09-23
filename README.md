@@ -6,13 +6,6 @@ Desafio da sequência de criação de um site de aulas particulares📚.
 
 Criação de um header com dois links: Teachers e Students.
 
-### Estilização
-
-- Aplicação de um background;
-- Utilizar a fonte Roboto;
-- Utilizar o conceito de `box-sizing` e o seletor `+` para centralizar os seus links;
-- Utilizar o `after` e o `transition` para aplicar um efeito visual nos links quando o mouse passar por cima.
-
 ## Card do Professor
 
 Criar um card(em duas seções: imagem e detalhes) para apresentação do professor utilizando o browser-sync, contendo as seguintes informações:
@@ -23,14 +16,6 @@ Criar um card(em duas seções: imagem e detalhes) para apresentação do profes
 - Tipo de aula (presencial ou à distância);
 - Acompanhamento (ex.: Matemática e Física);
 - Desde (data de cadastro na plataforma)
-
-### Estilização
-
-- A imagem deve ocupar 40% do card e os detalhes 60%.
-- Utilize o seletor `first-child` e `border-top` para estilizar as divisórias entre os items.
-- Utilize o seletor `nth-child()` para estilizar o label (ex.: Desde) e valor (ex.: 02/02/2020) do item.
-- Utilize o `keyframes` e o `animation` para fazer uma animação do card.
-- Utilize o `box-shadow` para aplicar uma sombra no card.
 
 ## Formulário e Rota de cadastro do Professor
 
@@ -44,9 +29,6 @@ Criar um formulário de cadastro do professor e uma rota do tipo post que irá r
 
 ## Rotas
 Crie um arquivo `teachers.js` na raiz do seu projeto e faça a validação de todos os campos utilizando `keys` e o constructor `Object`. Além disso, utilize o método `writeFile` da lib `fs` para gerar um arquivo json que irá conter um array de todos os professores cadastrados. Ao final desses dois processos (validação e salvamento), faça o redirecionamento para a página de listagem de professores.
-
-### Estilização
-Estilização própria.
 
 ## Apresentação, edição e formatação dos dados de um professor
 Criar uma rota(show) para apresentação dos dados do professor e uma rota(edit) para edição dos dados cadastrados, formatando corretamente para exibição em HTML.
@@ -62,29 +44,9 @@ Crie uma rota para lidar com a apresentação dos dados cadastrados de um profes
 
 Ao fim da apresentação dos dados, crie um link que irá redirecionar para a rota de edição dos dados cadastrados.
 
-### Edição
-
-Crie uma rota para lidar com a edição dos dados cadastrados de um professor. Dentro do arquivo `teachers.js`, crie um método `edit` para buscar e retornar o professor a partir do `id` fornecido na rota. Utilize a mesma interface da rota de apresentação dos dados do professor (lembrando de fazer o reaproveitamento do form com um arquivo `fields.njk`). Por fim, crie uma função chamada `date` no arquivo `utils.js`. Essa função deve retornar a data no formato `yyyy-mm-dd` para a correta exibição no input do tipo `date` no HTML (lembre de tratar os dias e meses menores que 10 utilizando o método `splice` da string).
-
-### Estilização
-
-Estilização própria.
-
 ## HTTP: PUT e DELETE
 
 Implementar duas rotas: PUT e DELETE para a atualização e remoção, respectivamente, dos dados cadastrados de um professor.
-
-### PUT
-
-Criar uma rota para receber os dados do formulário de edição e propagar no arquivo `json`. Lembre de sobrescrever o método POST do form para PUT (utilize a lib `method-override`). Dentro do arquivo `teachers.js`, crie um método `update` para buscar e retornar o professor a partir do `id` fornecido na rota. Faça a busca pelo professor a partir do `id` e atualize no arquivo `json` os dados que foram alterados (utilize o constructor `Number` para formatar o id como número). Por fim, redirecione para a página de apresentação dos dados de um professor (show).
-
-### DELETE
-
-Criar um botão na página de apresentação dos dados do professor. Esse botão irá chamar uma rota para deletar o professor do arquivo `json`. Lembre de sobrescrever o método POST do form para DELETE (utilize a lib `method-override`). Dentro do arquivo `teachers.js`, crie um método `delete` e gere um array com todos os professores, exceto o que deve ser removido (`filter`). Por fim, redirecione para a página de listagem dos professores.
-
-### Estilização
-
-Estilização própria
 
 ## Listagem de professores
 Listar todos os professores salvos no arquivo `json` e apresentá-los em formato de tabela.
@@ -97,27 +59,9 @@ Crie uma rota para repassar para o arquivo de listagem os dados dos professores 
 
 Crie um arquivo que irá mostrar os dados dos professores em formato de tabela. Utilize `Nome completo`, `Acompanhamento` e `Ação` como cabeçalhos.
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio, mas alguns pontos são obrigatórios:
-
-- A tabela deve ocupar todo o espaçamento do cartão;
-- Os cabeçalhos e os valores devem estar centralizados;
-- A imagem deve ser apresentada antes do nome. Deve ter formato circular e tamanho de 40px;
-- O campo `Acompanhamento` deve apresentar as matérias lecionadas de forma separada (array, assim como na página de apresentação de dados de um professor).
-
 ## Estruturando estudantes
 
 Reaproveitar para os estudantes toda a estrutura já criada para os professores. Além disso, deve implementar a lógica do menu ativo.
-
-### Estrutura
-
-Reaproveite o código obedecendo os seguintes padrões:
-
-- Crie um arquivo `students.js` com a mesma estrutura que o `teachers.js`. Insira ambos os arquivos dentro uma pasta `controllers`;
-- Crie um array `students` vazio dentro do arquivo `json`;
-- Crie uma pasta `students` com a mesma estrutura de views que os professores;
-- Crie as rotas dos estudantes seguindo a mesma estrutura dos professores.
 
 ### Menu Ativo
 
@@ -161,6 +105,92 @@ Crie um arquivo `confirm.njk` e importe ele no seu arquivo `edit.njk`. Esse arqu
 
 Faça os ajustes de professores para estudantes na página de listagem dos dados de um estudante. Remova a coluna de `Acompanhamento` e adicione as de `Email` e `Ano escolar`.
 
-### Estilização
+### Criando Banco de dados
 
-Estilização própria.
+Utilizando a ferramenta postbird, crie **através de queries** um banco de dados chamado **my_teacher** e uma tabela com o nome de **teachers** que possua os seguintes campos:
+
+- id: INT e PRIMARY KEY;
+- avatar_url: TEXT e NOT NULL;
+- name: TEXT e NOT NULL;
+- birth_date: TIMESTAMP e NOT NULL;
+- education_level: TEXT e NOT NULL;
+- class_type: TEXT e NOT NULL;
+- subjects_taught: TEXT e NOT NULL;
+- created_at: TIMESTAMP e NOT NULL.
+
+### Refatorando o Código
+
+Após preparar o banco de dados, é preciso refatorar a sua aplicação para utilizá-lo. Você deve fazer as seguintes alterações:
+
+- Utilizar a nova estrutura de pastas (src, app e lib);
+- Corrija nos arquivos os caminhos relativos que precisar;
+- Utilize nos arquivos da pasta `controllers` a nova forma de exportar.
+
+### Configurando BD na aplicação
+
+Por fim, instale a biblioteca `pg` e crie o arquivo de configuração do seu banco de dados (em uma pasta **config**) utilizando o `Pool`. Não esqueça de passar os dados necessários (**user, password, host, port e database**) na hora de instanciar (**new**) o Pool.
+
+### Inserindo dados
+
+No método `post`, construa uma query usando `INSERT` que crie um novo registro no banco de dados.
+
+### Buscando dados
+
+No método `index`, construa uma query usando `SELECT` que retorne todos os registros do banco de dados. Ordene esses resultados pelo nome de forma crescente.
+
+### Criando Model
+
+As operações com o banco de dados não devem ficar no controller, por isso crie um model que contenha os cinco métodos:
+
+- `all`: Buscar todos os registros;
+- `create`: Criar um registro;
+- `find`: Buscar apenas um registro a partir do id informado;
+- `update`: Atualiza um registro a partir do id informado;
+- `delete`: Remove um registro a partir do id informado;
+
+### Atualizando dados
+
+Crie um método `update` no model. Nesse método, construa uma query utilizando `UPDATE`, `SET` e `WHERE` que atualiza um registro do banco de dados a partir do id informado.
+
+### Removendo dados
+
+Crie um método `delete` no model. Nesse método, construa uma query utilizando `DELETE` e `WHERE` que remova um registro do banco de dados a partir do id informado.
+
+### Refatorando students
+
+Refatore o controller de estudantes utilizando as mesmas ideias aplicadas no controller de professores.
+
+### Relacionamentos
+
+Adicione um campo `teacher_id` na tabela de estudantes. Em seguida, nas páginas de cadastro e edição de estudantes adicione um campo select que lista todos os professores cadastrados. Por fim, na página de detalhe de um estudante, crie um campo que mostre o o nome do professor do aluno.
+
+### Filtros
+
+Na página de listagem de professores, adicione um input de texto para os filtros e um botão para retornar uma nova listagem com os dados filtrados. No método `index` do controller, faça uma verificação para checar se existem filtros passados por `query params`. Se existir, crie um método `findBy` no model que retorna todos os professores que que tiverem o nome ou a área de atuação em comum com o filtro passado (utilize o `ILIKE`).
+
+### Backend
+
+Adicione no método `index` do controller de professores o tratamento dos campos `page` e `limit` que serão transmitidos via `query params`. Além disso, faça o cálculo do `offset` a ser passado para a query. Por fim, crie um novo método `paginate` no model que deve implementar toda a query já existente (com filter e order) e também adicionar a paginação (utilize `LIMIT` e `OFFSET`).
+
+### Frontend
+
+Crie um algoritmo que realize a paginação dos resultados da seguinte forma:
+
+- As duas primeiras e últimas páginas sempre devem ser apresentadas (ex: 1, 2, 45 e 46 de um total de 46 pags.);
+- Caso existam mais de 7 páginas, as intermediárias selecionadas devem ser apresentadas juntamente com seu sucessor e antecessor (ex.: 1, 2, ..., 12, 13 (selecionada), 14, ..., 23, 24);
+- Só apresente as reticências se elas representarem um grupo de 2 páginas ou mais (ex.: 1, 2, 3 (sem reticências), 4, 5 (selecionada), 6, ...(pags 7 e 8), 9, 10).
+
+Em seguida, implemente na query do método `paginate` no model de professor a lógica da paginação:
+
+- realizar o `count` de todos os registros de professores (utilize uma `subquery`);
+- aplicar os filtros tanto na `query` de busca dos professores quanto na `subquery` de `count`.
+
+Por fim, utilize o `scripts.js` para renderizar no `html` (não faça no `nunjucks`) a paginação ao final da listagem (não esqueça que as reticências não devem ser links).
+
+### Ajustes finais
+
+Para finalizar, basta:
+
+- Estilizar a paginação;
+- Preservar o filter quando a página for alterada;
+- Implementar no front dos estudantes a paginação (siga a mesma ideia aplicada nos professores).
